@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+    <title>New registration Page</title>
+    <link rel="stylesheet" href="new.css">
+
+
+    <script>
+        function init()
+	{
+	   nam = document.getElementById('nm');
+       mail = document.getElementById('email');
+	   password = document.getElementById('password');
+       adr= document.getElementById('address');
+       mobile = document.getElementById('phone');
+       city = document.getElementById('city');
+
+	   
+	   err1 = document.getElementById('err1');
+	   err2 = document.getElementById('err2');
+	   err3 = document.getElementById('err3');
+       err4 = document.getElementById('err4');
+       err5 = document.getElementById('err5');
+       err6 = document.getElementById('err6');
+    
+	}
+	
+	function validation()
+	{	
+	  var nme = nam.value;
+      var emal= mail.value;
+	  var pass = password.value;
+      var addres= adr.value;
+	  var mob = mobile.value;
+      var ct = city.value;
+     
+      
+	  if(nme.length == 0)
+	  {
+	     err1.innerHTML = "Please Enter Name..";
+		 err1.style.color="red";
+	  }	 
+	  else
+	  {
+	    err1.innerHTML = "";
+	  }
+
+
+      if(emal.length == 0)
+	  {
+	     err2.innerHTML = "Please Enter email..";
+		 err2.style.color="red";
+	  }	 
+	  else
+	  {
+	    err2.innerHTML = "";
+	  }
+
+
+	  if(pass.length == 0)
+      {
+	     err3.innerHTML = "Please Enter Password..";
+		 err3.style.color="red";
+	  } 
+	  else if(pass.length<5 || pass.length>8)
+	  {
+	    err3.innerHTML = "password length must be 5 to 8 char";
+		err3.style.color="red";
+	  }
+	  else
+	  {
+	    err3.innerHTML = ""; 
+	  }
+
+
+      if(addres.length == 0)
+	  {
+	     err4.innerHTML = "Please Enter adress..";
+		 err4.style.color="red";
+	  }	 
+	  else
+	  {
+	    err4.innerHTML = "";
+	  }
+
+
+	  if(mob.length == 0)
+	  {
+	     err5.innerHTML = "Please Enter Mobile..";
+	     err5.style.color = "red";
+	  }
+	  else if(isNaN(mob))  
+	  {
+	     err5.innerHTML = "Please enter only digits.";
+		 err5.style.color = "red";
+	  }
+	  else if(mob.length<10 || mob.length>10)
+	  {
+	     err5.innerHTML = "Please enter 10 digit number";
+		 err5.style.color="red";
+	  }
+	  else
+	  {
+	     err5.innerHTML = "";
+	  }
+
+      if(ct.length == 0)
+	  {
+	     err6.innerHTML = "Please Enter City..";
+		 err6.style.color="red";
+	  }	 
+	  else
+	  {
+	    err6.innerHTML = "";
+	  }
+
+    }
+
+    </script>
+
+
+</head>
+<body onload="init()">
+    <div class="st_logo">
+        <img src="logo-removebg-preview.png">
+    </div>
+
+    <div class="navv">
+        <div class="topnav">
+            <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="index.html">Home</a>
+                <a href="#"></a>
+                <a href="how_it_works.html">How it Works</a>
+        </div>
+    </div>
+
+    <div class="b_b">
+        <form action="new_t.html" method="post">
+            <label><b>Register Yourself as Teacher</b></label><br><br>
+            <input type="text" placeholder="Enter Name" name="nm" id="nm" onkeyup="validation()">
+        <span id="err1"></span><br><br>
+        <input type="text" placeholder="Enter Email" name="email" id="email" onkeyup="validation()">
+        <span id="err2"></span><br><br>
+        <input type="text" placeholder="Enter Password" name="password" id="password" onkeyup="validation()">
+        <span id="err3"></span><br><br>
+        <input type="text" placeholder="Enter Address" name="address" id="address" onkeyup="validation()">
+        <span id="err4"></span><br><br>
+        <input type="text" placeholder="Enter phone number" name="phone" id="phone" onkeyup="validation()">
+        <span id="err5"></span><br><br>
+
+
+            <input type="text" placeholder="Enter city" name="city" id="city" onkeyup="validation()"><span id="err6"></span><br><br>
+
+            <label for="class">Select a class which you want to teach:</label><br><br>
+
+		<select name="class" id="class">
+		<option value="Class 1">Class 1</option>
+		<option value="Class 2">Class 2</option>
+		<option value="Class 3">Class 3</option>
+		<option value="Class 4">Class 4</option>
+		<option value="Class 5">Class 5</option>
+		<option value="Class 6">Class 6</option>
+		<option value="Class 7">Class 7</option>
+		<option value="Class 8">Class 8</option>
+		<option value="Class 9">Class 9</option>
+		<option value="Class 10">Class 10</option>
+		<option value="Class 11">Class 11</option>
+		<option value="Class 12">Class 12</option>
+		</select>
+
+
+
+        <br><br><label for="board">Select board which you want to teach:</label><br><br>
+
+<select name="board" id="board">
+  <option value="CBSE">CBSE</option>
+  <option value="ICSE">ICSE</option>
+</select>
+
+<br><br><label for="medium">Select medium in which you want to teach:</label><br><br>
+
+<select name="medium" id="medium">
+  <option value="English">English</option>
+  <option value="Hindi">Hindi</option>
+</select>
+
+<br><br><label for="subject">Select subject which you want to teach:</label><br><br>
+
+<select name="subject" id="subject">
+  <option value="English">English</option>
+  <option value="Hindi">Hindi</option>
+  <option value="Maths">Maths</option>
+  <option value="Physics">Physics</option>
+  <option value="Chemistry">Chemistry</option>
+  <option value="Biology">Biology</option>
+</select>
+<br><br><br><input type="submit" value="Create an account" onclick="validation()"><br><br>
+
+            
+</form> 
+    </div>
+
+
+    <div style="margin-top: 40%;position: absolute;text-align: center;top: 45%;left:40%;padding: 0 20px;">
+        <form action="login_t.html">
+<label>Already have an account?</label> 
+<input type="submit" value="Sign in"><br><br>
+        </form>
+    </div>
+
+
+</body>
+</html>
